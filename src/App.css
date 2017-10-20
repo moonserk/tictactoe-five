@@ -1,34 +1,39 @@
 .App {
   text-align: center;
+  
 }
 
 .App-header-260 {
   width: 260px;
   height: 52px;
-  position: fixed;
+  position: relative;
   top: 30%;
   left: 50%;
-  margin-top: -26px;
+  margin-top: 20px;
   margin-left: -130px;
 }
 
 .App-header-520{
   width: 520px;
   height: 52px;
-  position: fixed;
+  position: relative;
   top: 30%;
   left: 50%;
-  margin-top: -26px;
+  margin-top: 20px;
   margin-left: -260px;
+}
+
+.overflow{
+  overflow: scroll;
 }
 
 .App-header-780{
   width: 780px;
-  height: 52px;
-  position: fixed;
+  height: 780px;
+  position: relative;
   top: 30%;
   left: 50%;
-  margin-top: -26px;
+  margin-top: 20px;
   margin-left: -390px;
 }
 
@@ -37,13 +42,11 @@
   content: "";
   display: table;
 }
-.test{
-}
 
 .status{
   font-size: 26px;
   position: relative;
-  margin-top: 10px;
+  margin: 10px;
 }
 .new-game-btn{
   width: 100px;
@@ -67,7 +70,7 @@
 .status-winner{
   font-size: 26px;
   position: relative;
-  margin-top: 10px;
+  margin: 10px;
 }
 
 .App-title {

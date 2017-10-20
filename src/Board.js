@@ -10,7 +10,7 @@ class Board extends React.Component{
 			squares: {},
 			index_arr: Array(width).fill(null),
             isX: true,
-            status: null,
+            status: 'New game',
 		};
 	}
 
@@ -19,24 +19,20 @@ class Board extends React.Component{
 		if(!this.state.squares.hasOwnProperty(index)) {
 			var arr = this.state.squares;
             arr[index] = this.state.isX ? 'X' : '0';
-            this.setState({status: ''})
             this.setState({squares: arr, isX: !this.state.isX});
-         //   console.log(arr[index], parseInt(index.split('')[1]) + 1, arr[index]);
-         //   console.log(this.state.squares[index]);
-            this.calculateWinner(arr[index], index, this.state.squares);
+            this.calculateWinner(arr[index],i, j,index, this.state.squares);
             
 		}
 	}
-    
     
 	renderSquare(i, j){
 		var index = i + '' + j;
 		return <Square value={this.state.squares[index]} onClick={() => {this.handleClick(i, j);}}/>;
     }
 
-    calculateWinner(square, index, squares){
-        const i = parseInt(index.split('')[0], 10);
-        const j = parseInt(index.split('')[1], 10);
+    calculateWinner(square,ix, jx, index, squares){
+        const i = ix; // parseInt(index.split('')[0], 10);
+        const j = jx; //parseInt(index.split('')[1], 10);
 
         function nearLeft(inx, jnx){
             return function(i, j){
@@ -83,24 +79,23 @@ class Board extends React.Component{
        const vertical = nearLeft(i - 1, j)(1, 0) + 1 + nearRight(i + 1, j)(1, 0);
        const diagonal = nearLeft(i - 1, j - 1)(1, 1) + 1 + nearRight(i + 1, j + 1)(1, 1);
        const rDiagonal = nearLeftD(i + 1, j - 1)(1, 1) + 1 + nearRightD(i - 1, j + 1)(1, 1);
-       console.log(rDiagonal, nearLeftD(i + 1, j - 1)(1, 1), nearRightD(i - 1, j + 1)(1, 1), i - 1, j + 1);
+       console.log(horizontal, nearLeft(i , j - 1)(0, 1), i , j - 1);
        if(horizontal >= 5 || vertical >= 5 || diagonal >= 5 || rDiagonal >= 5){
-           this.setState({status: "Winner is " + square});
-           console.log(square + ' Wins');
+           this.setState({status: 'Winner is ' + square});
+       }else{
+           this.setState({status: "Next player :" +  square});
        }
     }
     
 	render(){
-        const status = "Next player: " + (this.state.isX ? 'X' : '0');
 		return(
             <div>
-            <div className='status'>{status}</div>
-            <div className='status-winner'>{this.state.status}</div>
+            <div className='status'>{this.state.status}</div>
 			<div className={'App-header-' + this.props.size}>
 				{this.state.index_arr.map((value, row_index) => {
 					return(<div className='board-row' key={row_index}>{
 						this.state.index_arr.map((value, col_index) => {
-							return(<div key={row_index + ' ' +col_index}>{this.renderSquare(row_index, col_index)}</div>);
+							return(<div key={row_index + ' ' + col_index}>{this.renderSquare(row_index, col_index)}</div>);
 						})
 					}</div>
                     );})
