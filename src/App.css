@@ -1,0 +1,91 @@
+.App {
+  text-align: center;
+}
+
+.App-header-260 {
+  width: 260px;
+  height: 52px;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  margin-top: -26px;
+  margin-left: -130px;
+}
+
+.App-header-520{
+  width: 520px;
+  height: 52px;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  margin-top: -26px;
+  margin-left: -260px;
+}
+
+.App-header-780{
+  width: 780px;
+  height: 52px;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  margin-top: -26px;
+  margin-left: -390px;
+}
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.test{
+}
+
+.status{
+  font-size: 26px;
+  position: relative;
+  margin-top: 10px;
+}
+.new-game-btn{
+  width: 100px;
+  height: 50px;
+  font-size: 26px;
+  text-decoration: none;
+  background-color: rgb(76, 219, 102);
+  border-radius: 100px;
+  border-color: rgb(112, 236, 174);
+  padding: 5px;
+  margin: 5px;
+  text-decoration-color: rgb(59, 29, 29);
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  
+}
+.tdnone{
+  text-decoration: none;
+  color: #000 !important;
+}
+
+.status-winner{
+  font-size: 26px;
+  position: relative;
+  margin-top: 10px;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.Square-border{
+  background: #fff;
+  border: 1px solid #999;
+  float: left;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 52px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 52px;
+  outline: none;
+}
