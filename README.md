@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
@@ -2166,3 +2167,9 @@ If you have ideas for more “How To” recipes that should be on this page, [le
 =======
 # tictactoe-five
 >>>>>>> 53b26b332a7b51ce3d9c3df8398ff0965f8beb80
+=======
+## Tictactoe-five
+### React Application
+
+![tictactoe](https://cdn1.savepice.ru/uploads/2017/10/20/0bd90eebff275592b692fff042f6223b-full.png)
+>>>>>>> be51a3ce9f4412798fa7b205aa6df5ccf7700ebd
